@@ -1,0 +1,28 @@
+<div [class.busy]="busy">
+	<div *ngIf="!busy; else busyTemplate">
+		<ul *ngIf="daysToDisplay?.length === 1; else tableTemplate">
+			<li>
+				<span [textContent]="daysToDisplay[0].day"></span> |
+				<span [textContent]="daysToDisplay[0].status"></span> |
+				<span [textContent]="daysToDisplay[0].temperature"></span> °C
+			</li>
+		</ul>
+	</div>
+</div>
+
+<ng-template #tableTemplate>
+	<table>
+		<tr>
+			<th>Day</th><th>Status</th><th>Temperature</th>
+		</tr>
+		<tr *ngFor="let item of daysToDisplay">
+			<td [textContent]="item.day"></td>
+			<td [textContent]="item.status"></td>
+			<td><span [textContent]="item.temperature"></span>°C</td>
+		</tr>
+	</table>
+</ng-template>
+
+<ng-template #busyTemplate>
+	<div *ngIf="busy">weather is loading</div>
+</ng-template>

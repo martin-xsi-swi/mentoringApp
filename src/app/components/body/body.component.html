@@ -1,0 +1,14 @@
+<div class="body">
+	<div class="content">
+		Welcome to {{ title }}!
+
+		<div class="weatherWrapper">
+			<strong>Weather forecast for following week:</strong>
+			<app-weather [refresh]="refresh" (forecast)="onUpdate($event)"></app-weather>
+
+		</div>
+
+		<button type="button" (click)="refreshWeather()">{{refresh ? 'refreshing...' : 'Refresh'}}</button>
+
+	</div>
+</div>
