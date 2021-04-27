@@ -1,0 +1,59 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+    font-family: Calibri;
+
+    ul, ol, li {
+        list-style-type: none;
+        margin: 0;
+        padding: 0
+    }
+
+    table {
+        th {
+            padding: 5px;
+            background: dimgray;
+            color: white;
+        }
+
+        td {
+            padding: 5px;
+            background: silver;
+
+            &:nth-child(3) {
+                text-align: right
+            }
+
+        }
+    }
+
+    .content {
+        max-width: 1024px;
+        margin: 0 auto;
+    }
+
+    .busy {
+        height: 50px;
+        text-align: center;
+        background: url('assets/banan.gif') no-repeat 50% 50%;
+    }
+
+}
+
+.d-flex {
+    width: 100%;
+
+    &-container {
+        display: flex;
+        flex-wrap: wrap;
+
+        &-center {
+            align-items: center;
+        }
+    }
+
+    .space-btw {
+        justify-content: space-between;
+    }
+
+}
