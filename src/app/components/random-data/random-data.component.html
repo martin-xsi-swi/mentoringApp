@@ -1,0 +1,15 @@
+<div style="max-width: 500px;">
+	<label for="dataSource">Select data source:</label>
+	<select id="dataSource" (change)="onSelectChange($event.target.value)">
+		<option></option>
+		<option *ngFor="let option of selectOptions" [value]="option | lowercase">{{option}}</option>
+	</select>
+
+	<div [class.busy]="busy" style="min-height: 50px; min-width: 50px">
+		<span *ngIf="randomData !== undefined; else noDataTemplate" [textContent]="randomData | json"></span>
+	</div>
+
+	<ng-template #noDataTemplate>
+		<div style="border: 1px solid silver;">Select option to fetch data</div>
+	</ng-template>
+</div>

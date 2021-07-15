@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "myApp": {
+    "app": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -23,7 +23,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.less"
             ],
             "scripts": []
           },
@@ -72,7 +72,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles.css"
+              "src/styles.less"
             ],
             "scripts": [],
             "assets": [
@@ -95,7 +95,7 @@
         }
       }
     },
-    "myApp-e2e": {
+    "app-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -123,5 +123,10 @@
       }
     }
   },
-  "defaultProject": "myApp"
+  "defaultProject": "app",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "less"
+    }
+  }
 }
